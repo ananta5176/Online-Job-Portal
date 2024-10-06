@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.entity.User;
 
@@ -19,8 +20,10 @@ public class LoginServlet extends HttpServlet {
 			String em = req.getParameter("email");
 			String ps = req.getParameter("password");
 			User u = new User();
+			HttpSession session = req.getSession();
 			
-			if("admin@gmail.com".equals(em) && "admin@123".equals(pw)) {
+			if("admin@gmail.com".equals(em) && "admin@123".equals(ps)) {
+				session.setAttribute("userob", u);
 				u.setRole("admin");
 				resp.sendRedirect("admin.jsp");
 			}

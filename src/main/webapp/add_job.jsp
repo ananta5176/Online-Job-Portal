@@ -1,3 +1,7 @@
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page isELIgnored="false" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,8 +20,8 @@
 				<div class="card-body">
 					<div class="text-center text-success">
 						<i class="fas fa-user-friends fa-3x"></i>
-						<c:if text="${ not empty succMsg }">
-							<div class="alert alert-success" role="alert">"${succMsg}"</div>
+						<c:if test="${not empty succMsg}">
+							<div class="alert alert-success" role="alert">${succMsg}</div>
 							<c:remove var="succMsg" />
 						</c:if>
 						
@@ -25,13 +29,13 @@
 						
 					</div>
 					
-					<form action="addJob" method="post">
+					<form action="add_job" method="post">	
 						<div class="form-group">
 							<label>Enter Title</label><input type="text" name="title" required class="form-control">
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-4">
-								<label>Location</label> <select name="Location" class="custom-select" id="inlineFormCustomSelectPref">
+								<label>Location</label> <select name="location" class="custom-select" id="inlineFormCustomSelectPref">
 									<option selected>Choose..</option>
 									<option value="Odisha">Odisha</option>
 									<option value="Jharkhand">Jharkhand</option>
@@ -44,7 +48,7 @@
 								</select>
 							</div>
 							<div class="form-group col-md-4">
-								<label>Catogories</label> <select class="custom-select" id="inlineFormCustomSelectPref" name="catogory">
+								<label>Categories</label> <select class="custom-select" id="inlineFormCustomSelectPref" name="category">
 									<option selected>Choose..</option>
 									<option value="IT">IT</option>
 									<option value="Developer">Developer</option>
@@ -63,7 +67,7 @@
 						</div>
 						<div class="form-group">
 								<label>Enter Description</label>
-								<textarea required rows="6" cols="" name="desc" class="form-control"></textarea>
+								<textarea required rows="6" cols="" name="description" class="form-control"></textarea>
 							</div>
 							<button class="btn btn-success">Publish Job</button>
 					</form>
