@@ -1,7 +1,7 @@
 package com.entity;
 
 public class Jobs {
-	private String id;
+	private int id;
 	private String title;
 	private String description;
 	private String category;
@@ -21,11 +21,11 @@ public class Jobs {
 		this.location = location;
 		this.pdate = pdate;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setId(int i) {
+		this.id = i;
 	}
 	public String getTitle() {
 		return title;

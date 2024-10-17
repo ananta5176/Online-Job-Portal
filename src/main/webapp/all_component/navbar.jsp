@@ -12,7 +12,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
-      <c:if test="${userob.role eq 'admin'}">
+      <c:if test="${userobj.role eq 'admin'}">
       <li class="nav-item">
         <a class="nav-link" href="add_job.jsp">Post job</a>
       </li>
