@@ -41,7 +41,7 @@ public class Jobs {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getCategory() {
+	public String getCatagory()  {
 		return category;
 	}
 	public void setCategory(String category) {
