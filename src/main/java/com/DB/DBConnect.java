@@ -9,7 +9,7 @@ public class DBConnect {
 		try {
 			if(con == null) {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/online_job_portal","root","Ananta@123");
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/onine-job-portal","root","Jitendra@3476");
 			}
 		}
 		catch(Exception e) {

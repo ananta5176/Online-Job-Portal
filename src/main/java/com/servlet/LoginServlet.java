@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = req.getSession();
 			
 			if("admin@gmail.com".equals(em) && "admin@123".equals(ps)) {
-				session.setAttribute("userob", u);
+				session.setAttribute("userobj", u);
 				u.setRole("admin");
 				resp.sendRedirect("admin.jsp");
 			}
