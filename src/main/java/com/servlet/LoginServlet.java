@@ -28,7 +28,17 @@ public class LoginServlet extends HttpServlet {
 				resp.sendRedirect("admin.jsp");
 			}
 			else {
-			
+				UserDAO dao = new UserDAO(DBConnect.getCon());
+				User user =dao.login(em, ps);
+				
+				if(user != null) {
+					session.setAttribute("userobj", user);
+					resp.sendRedirect("home.jsp");
+				}
+				else {
+					session.setAttribute("succMsg", "Invalid email or password");
+					resp.sendRedirect("login.jsp");
+				}
 			}
 		
 		}
